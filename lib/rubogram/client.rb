@@ -27,7 +27,7 @@ module Rubogram
         raise ArgumentError.new "wrong number of arguments (#{args.size} for 0..1)"
       end
 
-      args.push {} if args.size == 0
+      args.push({}) if args.size == 0
 
       unless args[0].is_a? Hash
         raise ArgumentError.new "argument must be a Hash"
