@@ -1,8 +1,6 @@
 # Rubogram
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rubogram`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Rubogram is a small Faraday-based library to communicate with Telegram Bot API
 
 ## Installation
 
@@ -22,7 +20,52 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+At first, require rubogram in your application like this:
+
+```ruby
+require 'rubogram'
+```
+
+Create client with your token (you can obtain one [here](https://telegram.me/BotFather)):
+
+```ruby
+client = Rubogram::Client.new 'TOKENHERE'
+```
+
+And then make your requests like this:
+
+```ruby
+resp = client.send_message chat_id: '123', text: 'hello, machine world!'
+```
+
+You can see parsed response like this:
+
+```ruby
+resp.body
+```
+
+Note that in case of errors, exception will be raised, so don't forget to handle it
+
+## Options
+
+Rubogram Client has some options you can set, here's full list:
+
+```ruby
+client = Rubogram::Client.new 'TOKENHERE', adapter: Faraday.default_adapter, logging: true, raise_errors: true
+```
+
+Where:
+
+`adapter` - faraday adapter, look into faraday docs for more of them
+
+`logging` - true/false, enables/disables logging
+
+`raise_errors` - true/false, enables/disables error raising. If you disable this, you can check successfullness of request by verifying `ok` field in the parsed body
+
+## TODO
+
+* Write specs
+* Write examples
 
 ## Development
 

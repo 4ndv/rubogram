@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["andreyviktorov@outlook.com"]
 
   spec.summary       = %q{Rubogram is a small Faraday-based library to communicate with Telegram Bot API}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/4ndv/rubogram"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
