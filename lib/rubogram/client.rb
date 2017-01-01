@@ -29,13 +29,18 @@ module Rubogram
 
       args.push({}) if args.size == 0
 
-      unless args[0].is_a? Hash
-        raise ArgumentError.new "argument must be a Hash"
-      end
-
       method = method.to_s.split('_').inject([]){ |b,e| b.push(b.empty? ? e : e.capitalize) }.join
 
       @faraday.post method, args[0]
+    end
+
+    # Call method from telegram api
+    def call method, args = {}
+      unless args.is_a? Hash
+        raise ArgumentError.new "argument must be a Hash"
+      end
+
+      @faraday.post method, args
     end
   end
 end

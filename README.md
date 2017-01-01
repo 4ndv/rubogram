@@ -38,9 +38,15 @@ And then make your requests like this:
 resp = client.send_message chat_id: '123', text: 'hello, machine world!'
 ```
 
-So, as you can see `sendMessage` became `send_message` because of ruby guidelines(tm). But you can also use it like `sendMessage`.
+So, as you can see `sendMessage` became `send_message` because of ruby guidelines(tm). But you can also use it like `client.sendMessage`, just like in the telegram docs.
 
-You can see parsed response like this:
+Also you can use `call` method:
+
+```ruby
+resp = client.call 'sendMessage', chat_id: '123', text: 'Hello!'
+```
+
+You can see parsed response of all requests like this. Resp contains full Faraday response:
 
 ```ruby
 resp.body
