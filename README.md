@@ -1,6 +1,7 @@
 # Rubogram
 
 [![Build Status](https://travis-ci.org/4ndv/rubogram.svg?branch=master)](https://travis-ci.org/4ndv/rubogram)
+[![Coverage Status](https://coveralls.io/repos/github/4ndv/rubogram/badge.svg?branch=master)](https://coveralls.io/github/4ndv/rubogram?branch=master)
 
 Rubogram is a small Faraday-based library to communicate with Telegram Bot API
 
