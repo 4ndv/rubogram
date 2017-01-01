@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "rubogram"
   spec.version       = Rubogram::VERSION
   spec.authors       = ["Andrey Viktorov"]
-  spec.email         = ["andreyviktorov@outlook.com"]
+  spec.email         = ["andv@outlook.com"]
 
   spec.summary       = %q{Rubogram is a small Faraday-based library to communicate with Telegram Bot API}
   spec.homepage      = "https://github.com/4ndv/rubogram"
