@@ -1,5 +1,6 @@
-require "rubogram/version"
+require 'rubogram/version'
+require 'rubogram/client'
 
 module Rubogram
-  # Your code goes here...
+  # All the interesting stuff is in rubogram/client.rb
 end
