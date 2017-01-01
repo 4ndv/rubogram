@@ -23,7 +23,7 @@ module Rubogram
 
     # Using method_missing for catching all the methods
     def method_missing method, *args, &block
-      unless args.size > 1
+      if args.size > 1
         raise ArgumentError.new "wrong number of arguments (#{args.size} for 0..1)"
       end
 
