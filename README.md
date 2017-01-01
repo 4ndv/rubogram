@@ -38,6 +38,8 @@ And then make your requests like this:
 resp = client.send_message chat_id: '123', text: 'hello, machine world!'
 ```
 
+So, as you can see `sendMessage` became `send_message` because of ruby guidelines(tm). But you can also use it like `sendMessage`.
+
 You can see parsed response like this:
 
 ```ruby
