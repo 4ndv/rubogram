@@ -32,7 +32,7 @@ module Rubogram
 
       method = method.to_s.split('_').inject([]){ |b,e| b.push(b.empty? ? e : e.capitalize) }.join
 
-      @faraday.post method, args[0]
+      call(method, args[0])
     end
 
     # Call method from telegram api
