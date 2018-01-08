@@ -1,5 +1,6 @@
 require 'faraday'
 require 'faraday_middleware'
+require 'json'
 
 module Rubogram
   class Client
@@ -38,6 +39,12 @@ module Rubogram
     def call method, args = {}
       unless args.is_a? Hash
         raise ArgumentError.new "argument must be a Hash"
+      end
+
+      args.each_key do |key|
+        if args[key].is_a? Array || args[key].is_a? Hash
+          args[key] = JSON.dump(key)
+        end
       end
 
       @faraday.post method, args
