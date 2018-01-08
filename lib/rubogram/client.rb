@@ -10,7 +10,7 @@ module Rubogram
         faraday.request :url_encoded
 
         # Logging
-        faraday.response :logger if logging
+        faraday.response :logger, ::Logger.new(STDOUT), bodies: true if logging
 
         # Enabling error raising
         faraday.use Faraday::Response::RaiseError if raise_errors
@@ -43,7 +43,7 @@ module Rubogram
 
       args.each_key do |key|
         if args[key].is_a?(Array) || args[key].is_a?(Hash)
-          args[key] = JSON.dump(key)
+          args[key] = JSON.dump(args[key])
         end
       end
 
