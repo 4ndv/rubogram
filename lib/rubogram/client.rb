@@ -42,7 +42,7 @@ module Rubogram
       end
 
       args.each_key do |key|
-        if args[key].is_a? Array || args[key].is_a? Hash
+        if args[key].is_a?(Array) || args[key].is_a?(Hash)
           args[key] = JSON.dump(key)
         end
       end
