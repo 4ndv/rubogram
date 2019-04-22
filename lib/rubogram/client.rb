@@ -4,8 +4,12 @@ require 'json'
 
 module Rubogram
   class Client
-    def initialize token, adapter: Faraday.default_adapter, logging: true, raise_errors: true
-      @faraday = Faraday.new "https://api.telegram.org/bot#{token}/" do |faraday|
+    def initialize token, adapter: Faraday.default_adapter, logging: true, raise_errors: true, backend: nil
+      unless backend && backend.size > 0
+        backend = 'https://api.telegram.org'
+      end
+
+      @faraday = Faraday.new "#{backend}/bot#{token}/" do |faraday|
         faraday.request :multipart
         faraday.request :url_encoded
 
